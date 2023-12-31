@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Warehouse</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.4.22/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+
+<body>
+    <div class="search-box">
+        <input type="text" id="search-input" onchange="searchHandler()" placeholder="Type here"
+            class="input input-bordered w-full max-w-lg" />
+    </div>
+    <!-- Open the modal using ID.showModal() method -->
+    <div class="container mx-auto">
+        <button class="btn mx-auto block btn-primary" onclick="my_modal_3.showModal()">
+            Add New Data
+        </button>
+        <div role="alert" id="alert" class="alert hidden absolute top-0 right-0 flex items-start alert-success">
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Data Added Success</span>
+        </div>
+        <div role="alert" id="alert-error" class="alert alert-error hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" class="stroke-current shrink-0 h-6 w-6" fill="none"
+                viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span>Error! Task failed successfully.</span>
+        </div>
+        <dialog id="my_modal_3" class="modal">
+            <div class="modal-box w-11/12 max-w-5xl">
+                <form method="dialog p-2">
+                    <button class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
+                </form>
+
+                <form class="w-full  pt-5" id="add-form">
+
+                    <!-- TITLE  -->
+                    <input required type="text" id="title" placeholder="DATA TITLE"
+                        class="input input-bordered w-full " />
+                    <!-- TASG  -->
+                    <input required type="text" id="tags" placeholder="DATA TAGS"
+                        class="input mt-3 input-bordered w-full " />
+                    <!-- QUESTIONS  -->
+                    <input required type="text" id="questions" placeholder="DATA QUESTIONS"
+                        class="input mt-3 input-bordered w-full " />
+                    <!-- ANSWERS -->
+                    <textarea required class="textarea textarea-bordered w-full mt-3" placeholder="DATA ANSWERS"
+                        id="answers"></textarea>
+                    <select required id="type" class="input mt-3 input-bordered w-full ">
+                        <option value="">Select Option</option>
+                        <option value="text">TEXT</option>
+                        <option value="code">CODE</option>
+                    </select>
+                    <button class="btn btn-primary mt-5">
+                        Submit
+                    </button>
+                </form>
+            </div>
+        </dialog>
+    </div>
+    <section id="main-container" class="mt-10  grid grid-cols-4 gap-5 container mx-auto">
+        <!-- Data Containr  -->
+    </section>
+    <script src="./assets/index.js"></script>
+</body>
+
+</html>

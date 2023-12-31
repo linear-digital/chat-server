@@ -1,0 +1,16 @@
+#search {
+
+}
+
+.search-box{
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+.search-box input {
+    /* border: ; */
+}
+
+.data-card{
+    border: 1px solid black;
+}
